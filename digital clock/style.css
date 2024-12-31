@@ -3,16 +3,18 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #282c34;
+    background-image: url('slide3.jpeg');
+    background-size: cover;
+    background-position: center;
     color: white;
     font-family: 'Arial', sans-serif;
     margin: 0;
+    backdrop-filter: blur(2px);
 }
 #clock {
     font-size: 72px;
-    background: rgba(0, 0, 0, 0.5);
     padding: 20px 40px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }
