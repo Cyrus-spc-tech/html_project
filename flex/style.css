@@ -131,6 +131,7 @@ div[class^="card"] .img::after{
     opacity: 0;
     transform: translate(0,10px);
 }
+
 .addCard::after,
 .addCard::before{
     position: absolute;
@@ -146,15 +147,17 @@ div[class^="card"] .img::after{
     box-shadow: 0 20px 0 0 var(--color-item);
     transition: 0.5s;
 }
+
 .addCard::after{
     right:unset;
     left:107px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 55%;
 }
+
 /* animation */
 div[class^="card"]:hover .img img{
-    transform: scale(1.2) rotate(30deg) translate(10px, -20px);
+    transform: scale(1.1) rotate(0deg) translate(10px, -20px);
 }
 div[class^="card"]:hover .img::after{
     width:90%;
@@ -176,17 +179,3 @@ div[class^="card"]:hover .addCard::after{
 }
 
 
-
-div[class^='card'][class*='new'] .img {
-    background-image: url(img/new.webp);
-}
-div[class^='card'][class*='seller'] {
-    --color-item: #f26a5f;
-}
-div[class^='card'][class*='out'] {
-    filter: grayscale(1);
-    opacity: 0.5;
-}
-div[class^='card'][class$='prioritize']:not([class*='out']) {
-    order: -1;
-}
