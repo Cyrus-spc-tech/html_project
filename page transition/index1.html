@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes move-out {
+            from {
+                transform: translateY(0%);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+        .move-out {
+            animation: move-out 0.8s cubic-bezier(0.87, 0, 0.13, 1) both;
+        }
+    </style>
+</head>
+<body>
+    <h1> PAGE 1 </h1>
+    <div class="container" id="container">
+        <a href="#" class="card-link" data-target="page1.html">
+            <div class="card">
+                <img src="1.jpg" alt="Image 1">
+                <div class="card-content">
+                    <h3>Title 1</h3>
+                    <p>This is a description for the first image.</p>
+                </div>
+            </div>
+        </a>
+        <div class="card">
+            <img src="2.jpg" alt="Image 2">
+            <div class="card-content">
+                <h3>Title 2</h3>
+                <p>This is a description for the second image.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="3.jpg" alt="Image 3">
+            <div class="card-content">
+                <h3>Title 3</h3>
+                <p>This is a description for the third image.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.card-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const container = document.getElementById('container');
+                container.classList.add('move-out');
+                setTimeout(() => {
+                    window.location.href = this.getAttribute('data-target');
+                }, 800); // Match the duration of the move-out animation
+            });
+        });
+    </script>
+</body>
+</html>

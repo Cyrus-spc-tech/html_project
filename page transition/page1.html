@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Card 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+            animation: move-in 0.8s cubic-bezier(0.87, 0, 0.13, 1) both;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        @keyframes move-in {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0%);
+            }
+        }
+        @keyframes move-out {
+            from {
+                transform: translateY(0%);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+        .move-out {
+            animation: move-out 0.8s cubic-bezier(0.87, 0, 0.13, 1) both;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="back-link"><h1>Back</h1></a>
+    <div class="container" id="container">
+        <h1>About Card 1</h1>
+        <img src="1.jpg" alt="Card 1 Image"/>
+        <p>This is the about page for Card 1. <br>Here you can provide detailed information about the content and purpose of Card 1.<br> You can include any relevant details, background information, or other content that helps users understand more about Card 1.</p>
+    </div>
+    <script>
+        document.getElementById('back-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            const container = document.getElementById('container');
+            container.classList.add('move-out');
+            setTimeout(function() {
+                window.location.href = 'index1.html';
+            }, 800); // Match the duration of the move-out animation
+        });
+    </script>
+</body>
+</html>
